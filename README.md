@@ -16,7 +16,7 @@ It is one of the strongest examples in my portfolio of:
 - business logic implementation
 - Entity Framework Core data access
 - validation and request handling
-- unit and integration testing
+- integration testing
 
 **Repository:** [ASP.NET Core Support Ticket API](https://github.com/w-cook/dotnet-support-ticket-api)
 
