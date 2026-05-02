@@ -51,6 +51,15 @@ It is the strongest example in my portfolio of background processing, distribute
 
 ## Additional Work
 
+### Rogue Tactics — Unity/C# Technical Prototype
+**Tech:** C#, Unity
+
+Experimental tactical RPG prototype demonstrating grid-based movement, camera-relative perspective rotation, multi-height A* pathfinding, equipment interaction, fog of war, dialog, shader experiments, and gameplay systems design.
+
+This project is included as additional C# technical work rather than as my primary job-targeting portfolio focus. It demonstrates complex problem-solving, debugging, and systems thinking in a large interactive codebase.
+
+**Repository:** [Rogue Tactics Unity](https://github.com/w-cook/RogueTacticsUnity)
+
 ### Unity Bug-Fix Showcase
 **Tech:** C#, Unity
 
