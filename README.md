@@ -49,7 +49,25 @@ It is the strongest example in my portfolio of background processing, distribute
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
-## Additional Work
+## Additional Backend Work
+
+### Expense Tracker API
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT Bearer Authentication, xUnit
+
+This project demonstrates backend API development with authentication, protected endpoints, user-scoped business data, validation, EF Core persistence, and integration testing.
+
+It is included as an additional backend project focused on common business-application concerns, including:
+- JWT-based registration and login
+- protected API endpoints
+- user-owned expense records
+- DTO-based request and response models
+- validation with data annotations
+- SQL Server-backed persistence with Entity Framework Core
+- integration testing of authenticated API workflows
+
+**Repository:** [Expense Tracker API](https://github.com/w-cook/dotnet-expense-tracker-api)
+
+## Additional C# / Unity Work
 
 ### Rogue Tactics — Unity/C# Technical Prototype
 **Tech:** C#, Unity
@@ -77,7 +95,7 @@ Across these projects, my portfolio demonstrates:
 - SQL-backed relational data handling
 - validation-aware request and form processing
 - business logic implementation
-- unit and integration testing
+- integration testing
 - background processing with Worker Services
 - event-driven workflow
 - Docker-based local development
