@@ -67,6 +67,25 @@ It is included as an additional backend project focused on common business-appli
 
 **Repository:** [Expense Tracker API](https://github.com/w-cook/dotnet-expense-tracker-api)
 
+### FDA Recall Monitoring Dashboard
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, Vue 3, TypeScript, xUnit
+
+This project demonstrates a practical full-stack internal dashboard for monitoring FDA recall data, maintaining watchlist criteria, syncing external API results, and reviewing imported records.
+
+It is included as an additional full-stack business application project focused on:
+- ASP.NET Core Web API development
+- Vue 3 frontend integration with backend APIs
+- SQL Server-backed persistence with Entity Framework Core
+- external API integration using openFDA
+- watchlist-based sync workflow
+- duplicate prevention during imported data sync
+- review/unreview status workflow
+- sync activity/history tracking
+- loading, error, empty, and success states in the frontend
+- integration testing of backend workflows
+
+**Repository:** [FDA Recall Monitoring Dashboard](https://github.com/w-cook/fda-recall-monitoring-dashboard)
+
 ## Additional C# / Unity Work
 
 ### Rogue Tactics — Unity/C# Technical Prototype
