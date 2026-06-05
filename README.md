@@ -49,6 +49,21 @@ It is the strongest example in my portfolio of background processing, distribute
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
+### AI Research Brief Generator
+**Tech:** Python, Streamlit, Pydantic, SQLite, pytest, Google Gemini API
+
+This project demonstrates a practical AI application workflow through local document loading, retrieval-based prompt construction, hosted model integration, structured response validation, and local persistence.
+
+It is one of the strongest examples in my portfolio of:
+- Python application development
+- hosted AI model integration
+- retrieval-based prompt construction
+- Pydantic response validation
+- SQLite-backed generated brief history
+- automated testing with pytest
+
+**Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
+
 ## Additional Backend Work
 
 ### Expense Tracker API
