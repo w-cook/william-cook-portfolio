@@ -1,17 +1,77 @@
 # William Cook | Software Portfolio
 
-I’m a software developer building practical portfolio projects focused on C#/.NET, ASP.NET Core, SQL-backed applications, testing, Docker-based local development, and event-driven workflow.
+I’m a software developer building practical portfolio projects focused on backend and full-stack business applications.
+
+My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Vue/TypeScript, Python, and hosted AI API integration.
 
 This repository serves as the central landing page for the projects in my portfolio that are most relevant to the types of software roles I am targeting.
 
 ## Featured Projects
 
-### ASP.NET Core Support Ticket API
-**Tech:** C#, ASP.NET Core, Entity Framework Core, SQL Server, xUnit
+### Event-Driven Inventory Reorder Platform
+**Tech:** C#, ASP.NET Core Web API, Worker Service, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, Azure Service Bus Emulator
 
-This project demonstrates backend application fundamentals through API development, validation, relational data handling, and automated testing.
+This project demonstrates distributed backend application structure through an API, a background worker, SQL-backed workflow state, and queue-based reorder processing.
 
 It is one of the strongest examples in my portfolio of:
+- API and background processor separation
+- event-driven workflow design
+- SQL-backed business state
+- Docker-based local development
+- cloud-compatible architecture using zero-cost local emulation
+
+**Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
+
+### FDA Recall Monitoring Dashboard
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, Vue 3, TypeScript, xUnit, GitHub Actions
+
+This project demonstrates practical full-stack business application development through a dashboard for monitoring FDA recall data, saving watchlist criteria, syncing external API results, and reviewing imported records.
+
+It is one of the strongest examples in my portfolio of:
+- ASP.NET Core API development
+- Vue/TypeScript frontend work
+- external API integration
+- SQL-backed persistence with Entity Framework Core
+- integration testing and CI-backed build/test checks
+- workflow-oriented internal application design
+
+**Repository:** [FDA Recall Monitoring Dashboard](https://github.com/w-cook/fda-recall-monitoring-dashboard)
+
+### AI Research Brief Generator
+**Tech:** Python, Streamlit, Pydantic, SQLite, pytest, Google Gemini API
+
+This project demonstrates hosted-AI application integration through a local document analysis workflow that loads documents, chunks content, retrieves relevant context, builds structured prompts, and validates generated research briefs.
+
+It is one of the strongest examples in my portfolio of:
+- Python application development
+- hosted AI API integration
+- document loading, chunking, and retrieval
+- structured prompt construction
+- Pydantic validation of generated output
+- local persistence for generated brief history
+
+**Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
+
+### ASP.NET Core Expense Tracker API
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT Authentication, xUnit
+
+This project demonstrates protected backend API development through registration/login, JWT authentication, user-scoped expense records, DTO validation, and integration-tested CRUD workflows.
+
+It is a strong example in my portfolio of:
+- JWT authentication and protected endpoints
+- user-scoped data access
+- REST-style API design
+- validation and request handling
+- integration testing
+
+**Repository:** [ASP.NET Core Expense Tracker API](https://github.com/w-cook/dotnet-expense-tracker-api)
+
+### ASP.NET Core Support Ticket API
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, xUnit
+
+This project demonstrates backend application fundamentals through API development, validation, relational data handling, business logic implementation, and automated integration testing.
+
+It is a strong example in my portfolio of:
 - REST-style API design
 - business logic implementation
 - Entity Framework Core data access
@@ -23,83 +83,16 @@ It is one of the strongest examples in my portfolio of:
 ### ASP.NET MVC Service Request Portal
 **Tech:** C#, ASP.NET Core MVC, Entity Framework Core, SQL Server
 
-This project focuses on server-rendered workflow, validation-aware forms, business logic, and status/history tracking.
+This project demonstrates server-rendered business workflow development through form handling, validation, status transitions, and audit-style history tracking.
 
-It demonstrates my ability to build structured business applications beyond simple CRUD pages, including:
-- MVC application structure
-- form handling and validation
-- business workflow implementation
-- status transitions and audit/history tracking
-- SQL-backed relational data handling
+It is a useful example in my portfolio of:
+- ASP.NET Core MVC application structure
+- server-rendered business forms
+- workflow status transitions
+- validation-aware form handling
+- SQL Server-backed application development through Entity Framework Core
 
 **Repository:** [ASP.NET MVC Service Request Portal](https://github.com/w-cook/aspnet-mvc-service-request-portal)
-
-### Event-Driven Inventory Reorder Platform
-**Tech:** C#, ASP.NET Core Web API, Worker Service, .NET Aspire, Entity Framework Core, SQL Server, Docker, Docker Compose, Azure Service Bus Emulator
-
-This project demonstrates a more advanced backend architecture with:
-- API and background processor separation
-- event-driven reorder workflow
-- SQL-backed business state
-- queue-based message publishing and consumption
-- containerized local execution
-- Azure-compatible messaging concepts using the official Azure Service Bus Emulator
-
-It is the strongest example in my portfolio of background processing, distributed structure, and cloud-ready backend design without relying on paid cloud infrastructure.
-
-**Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
-
-### AI Research Brief Generator
-**Tech:** Python, Streamlit, Pydantic, SQLite, pytest, Google Gemini API
-
-This project demonstrates a practical AI application workflow through local document loading, retrieval-based prompt construction, hosted model integration, structured response validation, and local persistence.
-
-It is one of the strongest examples in my portfolio of:
-- Python application development
-- hosted AI model integration
-- retrieval-based prompt construction
-- Pydantic response validation
-- SQLite-backed generated brief history
-- automated testing with pytest
-
-**Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
-
-## Additional Backend Work
-
-### Expense Tracker API
-**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT Bearer Authentication, xUnit
-
-This project demonstrates backend API development with authentication, protected endpoints, user-scoped business data, validation, EF Core persistence, and integration testing.
-
-It is included as an additional backend project focused on common business-application concerns, including:
-- JWT-based registration and login
-- protected API endpoints
-- user-owned expense records
-- DTO-based request and response models
-- validation with data annotations
-- SQL Server-backed persistence with Entity Framework Core
-- integration testing of authenticated API workflows
-
-**Repository:** [Expense Tracker API](https://github.com/w-cook/dotnet-expense-tracker-api)
-
-### FDA Recall Monitoring Dashboard
-**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, Vue 3, TypeScript, xUnit
-
-This project demonstrates a practical full-stack internal dashboard for monitoring FDA recall data, maintaining watchlist criteria, syncing external API results, and reviewing imported records.
-
-It is included as an additional full-stack business application project focused on:
-- ASP.NET Core Web API development
-- Vue 3 frontend integration with backend APIs
-- SQL Server-backed persistence with Entity Framework Core
-- external API integration using openFDA
-- watchlist-based sync workflow
-- duplicate prevention during imported data sync
-- review/unreview status workflow
-- sync activity/history tracking
-- loading, error, empty, and success states in the frontend
-- integration testing of backend workflows
-
-**Repository:** [FDA Recall Monitoring Dashboard](https://github.com/w-cook/fda-recall-monitoring-dashboard)
 
 ## Additional C# / Unity Work
 
@@ -108,47 +101,64 @@ It is included as an additional full-stack business application project focused 
 
 Experimental tactical RPG prototype demonstrating grid-based movement, camera-relative perspective rotation, multi-height A* pathfinding, equipment interaction, fog of war, dialog, shader experiments, and gameplay systems design.
 
-This project is included as additional C# technical work rather than as my primary job-targeting portfolio focus. It demonstrates complex problem-solving, debugging, and systems thinking in a large interactive codebase.
+This project remains visible as additional C# technical work rather than as my primary job-targeting portfolio focus. It demonstrates complex problem-solving, debugging, and systems thinking in a larger interactive codebase, while the main portfolio emphasis is now the backend, full-stack, and AI-enabled business application projects above.
 
 **Repository:** [Rogue Tactics Unity](https://github.com/w-cook/RogueTacticsUnity)
 
 ### Unity Bug-Fix Showcase
 **Tech:** C#, Unity
 
-This project is less directly aligned with the main .NET roles I am targeting, but it still demonstrates useful engineering skills through focused bug fixing, debugging, and problem-solving inside an existing Unity project.
+This project demonstrates debugging and focused problem solving inside an existing Unity codebase.
+
+It remains visible as additional work, but the main portfolio emphasis is now the backend, full-stack, and AI-enabled business application projects above.
 
 **Repository:** [Unity Bug-Fix Showcase](https://github.com/w-cook/unity-bugfix-showcase)
 
 ## What These Projects Demonstrate
 
 Across these projects, my portfolio demonstrates:
-- C# application development
+- backend and full-stack business application development
+- C#/.NET application development
 - ASP.NET Core Web API development
 - ASP.NET Core MVC development
-- Entity Framework Core
-- SQL-backed relational data handling
+- Entity Framework Core and SQL-backed persistence
 - validation-aware request and form processing
 - business logic implementation
 - integration testing
+- external API integration
 - background processing with Worker Services
-- event-driven workflow
+- event-driven workflows
 - Docker-based local development
+- CI build/test workflows with GitHub Actions
+- Vue/TypeScript frontend development
+- Python application development
+- hosted AI API integration with structured output validation
 - practical internal-business-application architecture
-- debugging and bug fixing in Unity/C#
+- debugging and problem solving in Unity/C#
 
 ## Technologies Used
 
 - C#
 - ASP.NET Core
 - ASP.NET Core MVC
-- Web API
+- ASP.NET Core Web API
 - Entity Framework Core
 - SQL Server
+- SQLite
 - xUnit
+- Python
+- Streamlit
+- Pydantic
+- pytest
+- TypeScript
+- Vue 3
 - Docker
 - Docker Compose
 - .NET Aspire
 - Azure Service Bus Emulator
+- GitHub Actions
+- Google Gemini API
+- openFDA API
 - Unity
 
 ## What I’m Targeting
@@ -156,10 +166,13 @@ Across these projects, my portfolio demonstrates:
 I’m primarily targeting software roles where I can contribute in areas like:
 - C# / .NET development
 - ASP.NET Core applications and APIs
+- backend and backend-leaning full-stack development
 - SQL-backed business systems
-- backend and application-layer logic
+- application-layer business logic
+- external API integrations
 - testing and maintainable code
-- practical full-stack or backend-leaning development
+- practical internal tools and business applications
+- AI-enabled application workflows where hosted model APIs are used as part of a larger software system
 
 ## Notes on Project Demonstration
 
