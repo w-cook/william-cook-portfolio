@@ -2,7 +2,7 @@
 
 I’m a software developer building practical portfolio projects focused on backend and full-stack business applications.
 
-My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Vue/TypeScript, Python, and hosted AI API integration.
+My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Java/Spring Boot, PostgreSQL, Vue/TypeScript, Python, and hosted AI API integration.
 
 This repository serves as the central landing page for the projects in my portfolio that are most relevant to the types of software roles I am targeting.
 
@@ -51,6 +51,22 @@ It is one of the strongest examples in my portfolio of:
 - local persistence for generated brief history
 
 **Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
+
+### Job Application Pipeline Manager
+**Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, Flyway, JUnit 5, Mockito, Testcontainers, Docker Compose, GitHub Actions, Vue 3, TypeScript, Vite
+
+This project demonstrates full-stack business workflow application development through a system for tracking job applications, follow-up tasks, screening questions, prepared answers, application statuses, and archived records.
+
+It is a strong example in my portfolio of:
+- Java/Spring Boot backend application structure
+- layered API design with entities, repositories, services, DTOs, and controllers
+- PostgreSQL-backed persistence with Flyway migrations
+- validation-aware request handling
+- service, controller, and Testcontainers-based repository testing
+- Vue/TypeScript frontend workflow for a practical internal tool
+- CI-backed build/test checks with GitHub Actions
+
+**Repository:** [Job Application Pipeline Manager](https://github.com/w-cook/job-application-pipeline-api)
 
 ### ASP.NET Core Expense Tracker API
 **Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT Authentication, xUnit
@@ -121,10 +137,13 @@ Across these projects, my portfolio demonstrates:
 - C#/.NET application development
 - ASP.NET Core Web API development
 - ASP.NET Core MVC development
+- Java/Spring Boot backend development
 - Entity Framework Core and SQL-backed persistence
+- PostgreSQL-backed persistence with Spring Data JPA
 - validation-aware request and form processing
 - business logic implementation
 - integration testing
+- Testcontainers-based database testing
 - external API integration
 - background processing with Worker Services
 - event-driven workflows
@@ -144,6 +163,14 @@ Across these projects, my portfolio demonstrates:
 - ASP.NET Core Web API
 - Entity Framework Core
 - SQL Server
+- Java
+- Spring Boot
+- Spring Data JPA
+- PostgreSQL
+- Flyway
+- JUnit 5
+- Mockito
+- Testcontainers
 - SQLite
 - xUnit
 - Python
@@ -152,6 +179,7 @@ Across these projects, my portfolio demonstrates:
 - pytest
 - TypeScript
 - Vue 3
+- Vite
 - Docker
 - Docker Compose
 - .NET Aspire
