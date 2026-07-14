@@ -2,7 +2,7 @@
 
 I’m a software developer building practical portfolio projects focused on backend and full-stack business applications.
 
-My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Java/Spring Boot, PostgreSQL, Vue/TypeScript, Python, and hosted AI API integration.
+My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Java/Spring Boot, PostgreSQL, Vue/TypeScript, C++, Qt, Python, and hosted AI API integration.
 
 This repository serves as the central landing page for the projects in my portfolio that are most relevant to the types of software roles I am targeting.
 
@@ -51,6 +51,25 @@ It is one of the strongest examples in my portfolio of:
 - local persistence for generated brief history
 
 **Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
+
+### TraceScope — Qt Telemetry Log Inspector
+**Tech:** C++, Qt Widgets, Qt Charts, CMake, Qt Test
+
+TraceScope is a native desktop application for loading, filtering, visualizing, and inspecting structured telemetry or diagnostic log files.
+
+It is a strong example in my portfolio of:
+- native C++ desktop application development
+- Qt Widgets UI development
+- file-based diagnostic tooling
+- structured JSON Lines parsing
+- filtering and search workflows
+- event detail inspection
+- grouped warning/error analysis
+- event-count timeline visualization
+- CSV export
+- testable parser, filtering, analysis, and export logic
+
+**Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
 ### Job Application Pipeline Manager
 **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, Flyway, JUnit 5, Mockito, Testcontainers, Docker Compose, GitHub Actions, Vue 3, TypeScript, Vite
@@ -153,6 +172,10 @@ Across these projects, my portfolio demonstrates:
 - Python application development
 - hosted AI API integration with structured output validation
 - practical internal-business-application architecture
+- native C++ desktop application development
+- Qt Widgets diagnostic tooling
+- file-based parsing and export workflows
+- telemetry/log inspection workflows
 - debugging and problem solving in Unity/C#
 
 ## Technologies Used
@@ -187,6 +210,11 @@ Across these projects, my portfolio demonstrates:
 - GitHub Actions
 - Google Gemini API
 - openFDA API
+- C++
+- Qt Widgets
+- Qt Charts
+- CMake
+- Qt Test
 - Unity
 
 ## What I’m Targeting
