@@ -9,16 +9,24 @@ This repository serves as the central landing page for the projects in my portfo
 ## Featured Projects
 
 ### Event-Driven Inventory Reorder Platform
-**Tech:** C#, ASP.NET Core Web API, Worker Service, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, Azure Service Bus Emulator
 
-This project demonstrates distributed backend application structure through an API, a background worker, SQL-backed workflow state, and queue-based reorder processing.
+**Tech:** C#, ASP.NET Core Web API, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, Azure Service Bus Emulator, xUnit
+
+A distributed inventory operations platform built around an ASP.NET Core API, a background processor, SQL-backed workflow state, and queue-based reorder processing.
+
+The system includes a React/TypeScript operations dashboard, role-based API access, SQL-backed audit records, health monitoring, and reliable message-processing safeguards. Reorder messages use stable identifiers, idempotent consumption, duplicate-delivery protection, configurable retries, failure records, and dead-letter handling.
 
 It is one of the strongest examples in my portfolio of:
+
 - API and background processor separation
 - event-driven workflow design
-- SQL-backed business state
-- Docker-based local development
-- cloud-compatible architecture using zero-cost local emulation
+- reliable and idempotent message processing
+- role-based authorization and operational auditing
+- SQL-backed business and processing state
+- React visibility for backend workflows
+- production-oriented automated testing
+- Docker- and Aspire-based local development
+- Azure-compatible architecture using zero-cost local emulation
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
