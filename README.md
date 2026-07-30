@@ -10,20 +10,27 @@ This repository serves as the central landing page for the projects in my portfo
 
 ### Event-Driven Inventory Reorder Platform
 
-**Tech:** C#, ASP.NET Core Web API, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, Azure Service Bus Emulator, xUnit
+**Tech:** C#, ASP.NET Core Web API, ASP.NET Core Identity, JWT Authentication, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, OpenTelemetry, Azure Service Bus Emulator, xUnit
 
-A distributed inventory operations platform built around an ASP.NET Core API, a background processor, SQL-backed workflow state, and queue-based reorder processing.
+A distributed inventory operations platform built around an ASP.NET Core API, a background processor, SQL-backed business state, and queue-based reorder processing.
 
-The system includes a React/TypeScript operations dashboard, role-based API access, SQL-backed audit records, health monitoring, and reliable message-processing safeguards. Reorder messages use stable identifiers, idempotent consumption, duplicate-delivery protection, configurable retries, failure records, and dead-letter handling.
+The system includes a React/TypeScript operations dashboard, persistent application accounts, JWT bearer authentication, role-based authorization, Administrator-controlled account management, SQL-backed audit records, health monitoring, and correlated diagnostics across the API and Processor.
+
+Inventory items support configurable reorder quantities. When an item enters a low-stock state, the platform captures the configured amount as an immutable requested-quantity snapshot in the reorder event and message, preserving historical workflow accuracy even if the inventory configuration changes later.
+
+Reorder messages use stable identifiers, idempotent consumption, duplicate-delivery protection, configurable retries, persisted failure records, and dead-letter handling.
 
 It is one of the strongest examples in my portfolio of:
 
-- API and background processor separation
+- distributed API, queue, and background processor architecture
+- ASP.NET Core Identity and JWT authentication
+- role-based authorization and Administrator account management
 - event-driven workflow design
+- mutable configuration versus immutable workflow snapshots
 - reliable and idempotent message processing
-- role-based authorization and operational auditing
-- SQL-backed business and processing state
+- SQL-backed business, audit, identity, and processing state
 - React visibility for backend workflows
+- OpenTelemetry tracing and correlation across service boundaries
 - production-oriented automated testing
 - Docker- and Aspire-based local development
 - Azure-compatible architecture using zero-cost local emulation
