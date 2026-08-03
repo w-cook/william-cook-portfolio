@@ -10,28 +10,34 @@ This repository serves as the central landing page for the projects in my portfo
 
 ### Event-Driven Inventory Reorder Platform
 
-**Tech:** C#, ASP.NET Core Web API, ASP.NET Core Identity, JWT Authentication, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, OpenTelemetry, Azure Service Bus Emulator, xUnit
+**Tech:** C#, ASP.NET Core Web API, ASP.NET Core Identity, JWT Authentication, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, OpenTelemetry, Azure Service Bus Emulator, typed HttpClient, xUnit
 
-A distributed inventory operations platform built around an ASP.NET Core API, a background processor, SQL-backed business state, and queue-based reorder processing.
+A distributed inventory operations platform built around an ASP.NET Core API, a background Processor, SQL-backed business state, queue-based reorder processing, and an independently hosted mock supplier service.
 
-The system includes a React/TypeScript operations dashboard, persistent application accounts, JWT bearer authentication, role-based authorization, Administrator-controlled account management, SQL-backed audit records, health monitoring, and correlated diagnostics across the API and Processor.
+The system includes a React/TypeScript operations dashboard, persistent application accounts, JWT bearer authentication, role-based authorization, Administrator-controlled account management, SQL-backed audit records, health monitoring, and correlated diagnostics across the API, message queue, Processor, supplier client, and supplier API.
 
 Inventory items support configurable reorder quantities. When an item enters a low-stock state, the platform captures the configured amount as an immutable requested-quantity snapshot in the reorder event and message, preserving historical workflow accuracy even if the inventory configuration changes later.
 
-Reorder messages use stable identifiers, idempotent consumption, duplicate-delivery protection, configurable retries, persisted failure records, and dead-letter handling.
+The Processor submits reorder requests to the supplier service through a typed HTTP client. Stable Service Bus message identifiers are reused as supplier idempotency keys, allowing duplicate delivery and ambiguous-response recovery without creating duplicate supplier orders.
+
+Supplier acceptance details and permanent rejection reasons are persisted and exposed through the API and Workflow interface. Retryable supplier failures leave the reorder event pending and eligible for Service Bus redelivery, while permanent rejection is recorded as a terminal business outcome.
+
+Reorder processing also includes SQL-backed duplicate protection, persisted failure records, configurable retries, dead-letter handling, and tests covering supplier acceptance, rejection, delayed responses, transient recovery, duplicate delivery, and recovery after supplier acceptance followed by a local persistence failure.
 
 It is one of the strongest examples in my portfolio of:
 
-- distributed API, queue, and background processor architecture
-- ASP.NET Core Identity and JWT authentication
-- role-based authorization and Administrator account management
-- event-driven workflow design
+- distributed API, queue, background Processor, and external-service architecture
+- ASP.NET Core Identity, JWT authentication, and role-based authorization
+- Administrator account management and SQL-backed audit history
+- event-driven workflow and service-to-service HTTP integration
 - mutable configuration versus immutable workflow snapshots
-- reliable and idempotent message processing
-- SQL-backed business, audit, identity, and processing state
-- React visibility for backend workflows
-- OpenTelemetry tracing and correlation across service boundaries
-- production-oriented automated testing
+- idempotent processing across both queue and HTTP boundaries
+- duplicate-delivery and ambiguous-response recovery
+- retryable technical failures versus terminal business rejection
+- SQL-backed business, identity, audit, processing, and supplier state
+- React visibility for supplier acceptance, rejection, and pending workflows
+- OpenTelemetry tracing and correlation across API, queue, Processor, and supplier boundaries
+- production-oriented integration and reliability testing
 - Docker- and Aspire-based local development
 - Azure-compatible architecture using zero-cost local emulation
 
