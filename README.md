@@ -6,6 +6,13 @@ My recent work includes distributed C#/.NET services, authenticated ASP.NET Core
 
 This repository is the central landing page for the portfolio projects most relevant to the remote software engineering roles I am targeting. The projects emphasize practical problem-solving, reliable application behavior, clear documentation, and technologies commonly used in real business software.
 
+## Approach to AI-Assisted Development
+
+My education and professional experience are grounded primarily in object-oriented software development, including application design, debugging, data modeling, and maintainable code structure. More recently, I have incorporated AI-assisted development into my workflow as a practical engineering tool.
+
+I use AI to accelerate research, compare implementation approaches, identify edge cases, improve documentation, and work more effectively in technologies where I have less experience, particularly frontend development. I remain responsible for the final design and implementation: I review generated code, adapt it to the existing architecture, validate behavior through builds and tests, and make sure I can explain the decisions represented in the finished work.
+
+Used carefully, AI reinforces my established strengths while helping me broaden my technical range and deliver more complete applications. I view it as a force multiplier for engineering judgment—not a replacement for fundamentals, testing, or ownership of the result.
 
 ## Featured Projects
 
