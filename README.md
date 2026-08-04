@@ -1,10 +1,11 @@
 # William Cook | Software Portfolio
 
-I’m a software developer building practical portfolio projects focused on backend and full-stack business applications.
+I’m a software engineer building practical applications across backend, full-stack, desktop, systems, and AI-assisted workflows.
 
-My recent work includes C#/.NET, ASP.NET Core, SQL-backed persistence, integration testing, Docker-based local development, event-driven workflows, Java/Spring Boot, PostgreSQL, Vue/TypeScript, C++, Qt, Python, and hosted AI API integration.
+My recent work includes distributed C#/.NET services, authenticated ASP.NET Core APIs, event-driven processing, SQL-backed persistence, React and TypeScript interfaces, Java and Spring Boot, native C++ and Qt desktop development, Python, hosted AI API integration, automated testing, Docker, and application observability.
 
-This repository serves as the central landing page for the projects in my portfolio that are most relevant to the types of software roles I am targeting.
+This repository is the central landing page for the portfolio projects most relevant to the remote software engineering roles I am targeting. The projects emphasize practical problem-solving, reliable application behavior, clear documentation, and technologies commonly used in real business software.
+
 
 ## Featured Projects
 
@@ -48,36 +49,6 @@ It is one of the strongest examples in my portfolio of:
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
-### FDA Recall Monitoring Dashboard
-**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, Vue 3, TypeScript, xUnit, GitHub Actions
-
-This project demonstrates practical full-stack business application development through a dashboard for monitoring FDA recall data, saving watchlist criteria, syncing external API results, and reviewing imported records.
-
-It is one of the strongest examples in my portfolio of:
-- ASP.NET Core API development
-- Vue/TypeScript frontend work
-- external API integration
-- SQL-backed persistence with Entity Framework Core
-- integration testing and CI-backed build/test checks
-- workflow-oriented internal application design
-
-**Repository:** [FDA Recall Monitoring Dashboard](https://github.com/w-cook/fda-recall-monitoring-dashboard)
-
-### AI Research Brief Generator
-**Tech:** Python, Streamlit, Pydantic, SQLite, pytest, Google Gemini API
-
-This project demonstrates hosted-AI application integration through a local document analysis workflow that loads documents, chunks content, retrieves relevant context, builds structured prompts, and validates generated research briefs.
-
-It is one of the strongest examples in my portfolio of:
-- Python application development
-- hosted AI API integration
-- document loading, chunking, and retrieval
-- structured prompt construction
-- Pydantic validation of generated output
-- local persistence for generated brief history
-
-**Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
-
 ### TraceScope — Qt Telemetry Log Inspector
 **Tech:** C++, Qt Widgets, Qt Charts, CMake, Qt Test
 
@@ -97,6 +68,21 @@ It is a strong example in my portfolio of:
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
+### AI Research Brief Generator
+**Tech:** Python, Streamlit, Pydantic, SQLite, pytest, Google Gemini API
+
+This project demonstrates hosted-AI application integration through a local document analysis workflow that loads documents, chunks content, retrieves relevant context, builds structured prompts, and validates generated research briefs.
+
+It is one of the strongest examples in my portfolio of:
+- Python application development
+- hosted AI API integration
+- document loading, chunking, and retrieval
+- structured prompt construction
+- Pydantic validation of generated output
+- local persistence for generated brief history
+
+**Repository:** [AI Research Brief Generator](https://github.com/w-cook/ai-research-brief-generator)
+
 ### Job Application Pipeline Manager
 **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, Flyway, JUnit 5, Mockito, Testcontainers, Docker Compose, GitHub Actions, Vue 3, TypeScript, Vite
 
@@ -112,6 +98,21 @@ It is a strong example in my portfolio of:
 - CI-backed build/test checks with GitHub Actions
 
 **Repository:** [Job Application Pipeline Manager](https://github.com/w-cook/job-application-pipeline-api)
+
+### FDA Recall Monitoring Dashboard
+**Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, Vue 3, TypeScript, xUnit, GitHub Actions
+
+This project demonstrates practical full-stack business application development through a dashboard for monitoring FDA recall data, saving watchlist criteria, syncing external API results, and reviewing imported records.
+
+It is one of the strongest examples in my portfolio of:
+- ASP.NET Core API development
+- Vue/TypeScript frontend work
+- external API integration
+- SQL-backed persistence with Entity Framework Core
+- integration testing and CI-backed build/test checks
+- workflow-oriented internal application design
+
+**Repository:** [FDA Recall Monitoring Dashboard](https://github.com/w-cook/fda-recall-monitoring-dashboard)
 
 ### ASP.NET Core Expense Tracker API
 **Tech:** C#, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT Authentication, xUnit
