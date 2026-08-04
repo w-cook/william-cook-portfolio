@@ -10,22 +10,25 @@ This repository serves as the central landing page for the projects in my portfo
 
 ### Event-Driven Inventory Reorder Platform
 
-**Tech:** C#, ASP.NET Core Web API, ASP.NET Core Identity, JWT Authentication, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, OpenTelemetry, Azure Service Bus Emulator, typed HttpClient, xUnit
+**Tech:** C#, ASP.NET Core Web API, ASP.NET Core Identity, JWT Authentication, Worker Service, React, TypeScript, Entity Framework Core, SQL Server, Docker, Docker Compose, .NET Aspire, OpenTelemetry, OpenAPI, Azure Service Bus Emulator, typed HttpClient, xUnit
 
 A distributed inventory operations platform built around an ASP.NET Core API, a background Processor, SQL-backed business state, queue-based reorder processing, and an independently hosted mock supplier service.
 
-The system includes a React/TypeScript operations dashboard, persistent application accounts, JWT bearer authentication, role-based authorization, Administrator-controlled account management, SQL-backed audit records, health monitoring, and correlated diagnostics across the API, message queue, Processor, supplier client, and supplier API.
+The application models a practical internal business workflow for organizations that need to monitor inventory and begin reordering before stock runs out. It includes a React/TypeScript operations dashboard, persistent application accounts, JWT bearer authentication, role-based authorization, Administrator-controlled account management, SQL-backed audit records, health monitoring, and correlated diagnostics across the API, message queue, Processor, supplier client, and supplier API.
 
-Inventory items support configurable reorder quantities. When an item enters a low-stock state, the platform captures the configured amount as an immutable requested-quantity snapshot in the reorder event and message, preserving historical workflow accuracy even if the inventory configuration changes later.
+The system is designed with eventual cloud deployment in mind. Its API, background Processor, supplier integration, databases, message queue, health checks, and distributed tracing are separated into independently deployable responsibilities. The complete application remains reproducible locally through .NET Aspire, Docker, SQL Server, and the Azure Service Bus Emulator without requiring paid cloud infrastructure.
 
-The Processor submits reorder requests to the supplier service through a typed HTTP client. Stable Service Bus message identifiers are reused as supplier idempotency keys, allowing duplicate delivery and ambiguous-response recovery without creating duplicate supplier orders.
+Inventory items support configurable reorder quantities. When an item enters a low-stock state, the platform captures the configured amount as an immutable requested-quantity snapshot in the reorder event and message. This preserves historical workflow accuracy even when the inventory item’s configuration changes later.
+
+The Processor consumes reorder messages and submits requests to the supplier service through a typed HTTP client. Stable Service Bus message identifiers are reused as supplier idempotency keys, allowing duplicate delivery, retries, and ambiguous-response recovery without creating duplicate supplier orders.
 
 Supplier acceptance details and permanent rejection reasons are persisted and exposed through the API and Workflow interface. Retryable supplier failures leave the reorder event pending and eligible for Service Bus redelivery, while permanent rejection is recorded as a terminal business outcome.
 
-Reorder processing also includes SQL-backed duplicate protection, persisted failure records, configurable retries, dead-letter handling, and tests covering supplier acceptance, rejection, delayed responses, transient recovery, duplicate delivery, and recovery after supplier acceptance followed by a local persistence failure.
+Reorder processing also includes SQL-backed duplicate protection, persisted failure records, configurable retries, dead-letter handling, correlation propagation, and distributed tracing. Automated tests cover supplier acceptance, rejection, delayed responses, transient recovery, duplicate delivery, idempotent replay, and recovery when supplier acceptance succeeds before the local database update initially fails.
+
+The project includes complete human-readable API documentation, generated OpenAPI contracts with JWT bearer and supplier idempotency metadata, and an operational runbook covering both Aspire and Docker/local execution. Final verification covered both runtime modes, supplier simulation behaviors, distributed tracing, committed configuration safety, and durable duplicate-submission handling.
 
 It is one of the strongest examples in my portfolio of:
-
 - distributed API, queue, background Processor, and external-service architecture
 - ASP.NET Core Identity, JWT authentication, and role-based authorization
 - Administrator account management and SQL-backed audit history
@@ -35,11 +38,13 @@ It is one of the strongest examples in my portfolio of:
 - duplicate-delivery and ambiguous-response recovery
 - retryable technical failures versus terminal business rejection
 - SQL-backed business, identity, audit, processing, and supplier state
-- React visibility for supplier acceptance, rejection, and pending workflows
+- React visibility for pending, accepted, and rejected supplier workflows
 - OpenTelemetry tracing and correlation across API, queue, Processor, and supplier boundaries
-- production-oriented integration and reliability testing
-- Docker- and Aspire-based local development
-- Azure-compatible architecture using zero-cost local emulation
+- cloud-ready service boundaries with fully reproducible local infrastructure
+- complete OpenAPI contracts, API reference documentation, and operational runbooks
+- verified Aspire and Docker/local runtime workflows
+- production-informed integration and reliability testing
+- Azure-oriented architecture demonstrated through zero-cost local emulation
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
