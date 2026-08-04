@@ -6,7 +6,7 @@ My recent work includes distributed C#/.NET services, authenticated ASP.NET Core
 
 This repository is the central landing page for the portfolio projects most relevant to the remote software engineering roles I am targeting. The projects emphasize practical problem-solving, reliable application behavior, clear documentation, and technologies commonly used in real business software.
 
-## Approach to AI-Assisted Development
+### Approach to AI-Assisted Development
 
 My education and professional experience are grounded primarily in object-oriented software development, including application design, debugging, data modeling, and maintainable code structure. More recently, I have incorporated AI-assisted development into my workflow as a practical engineering tool.
 
@@ -186,40 +186,39 @@ It remains visible as additional work, but the main portfolio emphasis is now th
 ## What These Projects Demonstrate
 
 Across these projects, my portfolio demonstrates:
-- backend and full-stack business application development
-- C#/.NET application development
-- ASP.NET Core Web API development
-- ASP.NET Core MVC development
-- Java/Spring Boot backend development
-- Entity Framework Core and SQL-backed persistence
-- PostgreSQL-backed persistence with Spring Data JPA
-- validation-aware request and form processing
-- business logic implementation
-- integration testing
-- Testcontainers-based database testing
-- external API integration
-- background processing with Worker Services
-- event-driven workflows
-- Docker-based local development
-- CI build/test workflows with GitHub Actions
-- Vue/TypeScript frontend development
-- Python application development
-- hosted AI API integration with structured output validation
-- practical internal-business-application architecture
-- native C++ desktop application development
-- Qt Widgets diagnostic tooling
-- file-based parsing and export workflows
-- telemetry/log inspection workflows
-- debugging and problem solving in Unity/C#
+
+- object-oriented application design and maintainable code organization
+- backend, full-stack, desktop, and internal business application development
+- C#/.NET and ASP.NET Core application development
+- Java and Spring Boot backend development
+- native C++ and Qt desktop application development
+- Python application development and hosted AI API integration
+- React, Vue, and TypeScript frontend development
+- SQL-backed persistence with Entity Framework Core and Spring Data JPA
+- API design, validation, authentication, authorization, and role-based access
+- background processing, event-driven workflows, and service-to-service integration
+- idempotency, retries, failure recovery, and dead-letter handling
+- automated unit, integration, relational database, and Testcontainers-based testing
+- Docker-based local environments and .NET Aspire orchestration
+- structured logging, health checks, correlation identifiers, and distributed tracing
+- OpenAPI contracts and practical operational documentation
+- external API integration and structured response validation
+- file parsing, filtering, visualization, and export workflows
+- CI build and test automation with GitHub Actions
+- debugging and problem solving across business applications, desktop software, and Unity/C#
 
 ## Technologies Used
 
 - C#
+- .NET
 - ASP.NET Core
 - ASP.NET Core MVC
 - ASP.NET Core Web API
+- ASP.NET Core Identity
+- JWT authentication
 - Entity Framework Core
 - SQL Server
+- xUnit
 - Java
 - Spring Boot
 - Spring Data JPA
@@ -228,41 +227,45 @@ Across these projects, my portfolio demonstrates:
 - JUnit 5
 - Mockito
 - Testcontainers
-- SQLite
-- xUnit
 - Python
 - Streamlit
 - Pydantic
 - pytest
+- C++
+- Qt Widgets
+- Qt Charts
+- Qt Test
+- CMake
 - TypeScript
+- React
 - Vue 3
 - Vite
 - Docker
 - Docker Compose
 - .NET Aspire
 - Azure Service Bus Emulator
+- OpenTelemetry
+- OpenAPI
 - GitHub Actions
 - Google Gemini API
 - openFDA API
-- C++
-- Qt Widgets
-- Qt Charts
-- CMake
-- Qt Test
+- SQLite
 - Unity
 
 ## What I’m Targeting
 
-I’m primarily targeting software roles where I can contribute in areas like:
-- C# / .NET development
-- ASP.NET Core applications and APIs
-- backend and backend-leaning full-stack development
-- SQL-backed business systems
-- application-layer business logic
-- external API integrations
-- testing and maintainable code
-- practical internal tools and business applications
-- AI-enabled application workflows where hosted model APIs are used as part of a larger software system
+I’m targeting remote software engineering roles where I can contribute to practical, maintainable applications across areas such as:
+
+- backend and full-stack application development
+- APIs, background services, and event-driven systems
+- SQL-backed business applications and internal tools
+- desktop applications and developer-facing utilities
+- external service and API integrations
+- automated testing, debugging, and reliability improvements
+- cloud-ready application architecture and containerized development
+- AI-enabled workflows where hosted models support a larger software system
+
+My recent work is strongest in object-oriented development, backend systems, and business application architecture, but I am open to roles across C#/.NET, Java, C++, Python, and modern frontend technologies.
 
 ## Notes on Project Demonstration
 
