@@ -56,22 +56,29 @@ It is one of the strongest examples in my portfolio of:
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
-### TraceScope — Qt Telemetry Log Inspector
-**Tech:** C++, Qt Widgets, Qt Charts, CMake, Qt Test
+### TraceScope — Cross-Platform Qt Telemetry Log Inspector
 
-TraceScope is a native desktop application for loading, filtering, visualizing, and inspecting structured telemetry or diagnostic log files.
+**Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, CMake, Qt Test, GitHub Actions, AppImage
+
+TraceScope is a cross-platform native desktop application for loading, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs.
 
 It is a strong example in my portfolio of:
+
 - native C++ desktop application development
-- Qt Widgets UI development
-- file-based diagnostic tooling
+- Qt Widgets and Qt Charts interface development
 - structured JSON Lines parsing
-- filtering and search workflows
-- event detail inspection
-- grouped warning/error analysis
-- event-count timeline visualization
-- CSV export
-- testable parser, filtering, analysis, and export logic
+- sortable event-table and detail-inspection workflows
+- severity, subsystem, and full-field text filtering
+- grouped warning and error analysis
+- filter-aware event timeline visualization
+- filtered CSV export
+- testable parsing, filtering, analysis, and export logic
+- automated Windows and Linux builds and tests
+- portable Windows x64 and Linux AppImage packaging
+- CI verification of packaged application startup
+- versioned GitHub releases with downloadable sample logs
+
+The current `v0.1.0` release establishes the completed fixed-schema prototype. Ongoing expansion work is focused on configurable imports, reusable field-mapping profiles, and a more flexible investigation model.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
