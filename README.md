@@ -56,29 +56,35 @@ It is one of the strongest examples in my portfolio of:
 
 **Repository:** [Event-Driven Inventory Reorder Platform](https://github.com/w-cook/event-driven-inventory-reorder-platform)
 
-### TraceScope — Cross-Platform Qt Telemetry Log Inspector
+### TraceScope — Cross-Platform Desktop Log Analysis Workbench
 
-**Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, CMake, Qt Test, GitHub Actions, AppImage
+**Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for loading, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific field mappings.
 
 It is a strong example in my portfolio of:
 
-- native C++ desktop application development
-- Qt Widgets and Qt Charts interface development
-- structured JSON Lines parsing
-- sortable event-table and detail-inspection workflows
-- severity, subsystem, and full-field text filtering
-- grouped warning and error analysis
-- filter-aware event timeline visualization
-- filtered CSV export
-- testable parsing, filtering, analysis, and export logic
-- automated Windows and Linux builds and tests
-- portable Windows x64 and Linux AppImage packaging
-- CI verification of packaged application startup
-- versioned GitHub releases with downloadable sample logs
+- native C++ desktop application development with Qt
+- configurable, multi-format log ingestion and normalization
+- JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, and configurable text-log support
+- Windows Event XML detection and profile-based mapping
+- reusable JSON import profiles for canonical and source-specific fields
+- preview and validation workflows before importing data
+- Qt model/view architecture with sortable dynamic columns
+- severity, subsystem, and full-record text filtering
+- selected-record inspection with preserved raw source data
+- grouped warning/error analysis and filter-aware timeline visualization
+- CSV export with canonical and custom fields
+- automated Qt Test coverage across importing, mapping, filtering, analysis, and export behavior
+- a full GitHub Actions CI pipeline that builds and tests the application on Windows and Linux
+- automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
+- CI verification of bundled runtime dependencies, packaged sample/profile contents, and release artifact structure
+- automated startup smoke tests against the packaged Windows and Linux applications
+- versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.1.0` release establishes the completed fixed-schema prototype. Ongoing expansion work is focused on configurable imports, reusable field-mapping profiles, and a more flexible investigation model.
+The current `v0.7.0` prerelease establishes broad, representative log-format support and a configurable import workflow. Its CI pipeline serves as the project’s release gate, verifying builds, tests, packaging, artifact contents, and packaged-application startup across both supported desktop platforms before release.
+
+Development is now shifting from format coverage toward deeper investigation features, beginning with responsive large-file importing and later multi-session analysis, advanced navigation, findings, comparison, persistence, and reporting.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
