@@ -58,33 +58,40 @@ It is one of the strongest examples in my portfolio of:
 
 ### TraceScope — Cross-Platform Desktop Log Analysis Workbench
 
-**Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, CMake, Qt Test, GitHub Actions, AppImage
+**Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, Qt Concurrent, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific field mappings.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
 
 It is a strong example in my portfolio of:
 
 - native C++ desktop application development with Qt
 - configurable, multi-format log ingestion and normalization
-- JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, and configurable text-log support
+- JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, key-value/logfmt, and configurable text-log support
 - Windows Event XML detection and profile-based mapping
-- reusable JSON import profiles for canonical and source-specific fields
-- preview and validation workflows before importing data
-- Qt model/view architecture with sortable dynamic columns
+- reusable versioned JSON import profiles for canonical and source-specific fields
+- mapping-aware preview, validation, and raw-source inspection before import
+- Qt model/view architecture with sortable dynamic columns and optional canonical fields
 - severity, subsystem, and full-record text filtering
 - selected-record inspection with preserved raw source data
 - grouped warning/error analysis and filter-aware timeline visualization
+- automatic and manual timeline resolutions from millisecond through day scale
+- bounded fine-resolution timeline rendering with horizontal navigation
+- background importing so long-running parses do not block the desktop UI
+- streamed import paths with progress reporting and cooperative cancellation where supported
+- measured large-file scenarios documented with conservative performance claims rather than unsupported maximum-size guarantees
+- a multi-session investigation workspace with independent per-session state
+- session switching, closing, and reloading without replacing unrelated open investigations
+- persistent recent-file and recent-profile history
 - CSV export with canonical and custom fields
-- automated Qt Test coverage across importing, mapping, filtering, analysis, and export behavior
-- a full GitHub Actions CI pipeline that builds and tests the application on Windows and Linux
+- automated Qt Test coverage across importing, profiles, workspace behavior, filtering, analysis, and export
+- GitHub Actions builds and tests on Windows and Linux
 - automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
-- CI verification of bundled runtime dependencies, packaged sample/profile contents, and release artifact structure
-- automated startup smoke tests against the packaged Windows and Linux applications
+- package-content verification and automated startup smoke tests
 - versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.7.0` prerelease establishes broad, representative log-format support and a configurable import workflow. Its CI pipeline serves as the project’s release gate, verifying builds, tests, packaging, artifact contents, and packaged-application startup across both supported desktop platforms before release.
+The current `v0.9.0` prerelease adds a multi-session investigation workspace on top of the configurable import and large-file responsiveness foundations established in earlier releases. Multiple related log sources can remain open simultaneously with independent investigation state, while recent files and profiles provide a faster path back into recurring analysis workflows.
 
-Development is now shifting from format coverage toward deeper investigation features, beginning with responsive large-file importing and later multi-session analysis, advanced navigation, findings, comparison, persistence, and reporting.
+Development is now focused on **advanced filtering and navigation**, including richer filtering dimensions, saved filter presets, warning/error navigation, surrounding-event context, and drill-down from charts and summaries. Later roadmap phases add findings, deterministic analytics, session comparison, workspace persistence, live file following, and reporting.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
