@@ -60,38 +60,43 @@ It is one of the strongest examples in my portfolio of:
 
 **Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, Qt Concurrent, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, visualizing, inspecting, and exporting structured telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
 
 It is a strong example in my portfolio of:
 
 - native C++ desktop application development with Qt
-- configurable, multi-format log ingestion and normalization
-- JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, key-value/logfmt, and configurable text-log support
-- Windows Event XML detection and profile-based mapping
-- reusable versioned JSON import profiles for canonical and source-specific fields
-- mapping-aware preview, validation, and raw-source inspection before import
-- Qt model/view architecture with sortable dynamic columns and optional canonical fields
-- severity, subsystem, and full-record text filtering
-- selected-record inspection with preserved raw source data
-- grouped warning/error analysis and filter-aware timeline visualization
-- automatic and manual timeline resolutions from millisecond through day scale
-- bounded fine-resolution timeline rendering with horizontal navigation
-- background importing so long-running parses do not block the desktop UI
-- streamed import paths with progress reporting and cooperative cancellation where supported
-- measured large-file scenarios documented with conservative performance claims rather than unsupported maximum-size guarantees
-- a multi-session investigation workspace with independent per-session state
-- session switching, closing, and reloading without replacing unrelated open investigations
+- configurable multi-format log ingestion and normalization
+- JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, key-value/logfmt, Windows Event XML, and configurable text-log support
+- reusable versioned JSON import profiles for canonical mappings, custom fields, severity aliases, timestamp rules, and record paths
+- mapping-aware preview, profile validation, format suggestions, and preserved raw-source inspection before import
+- a flexible investigation-record model with optional canonical fields, dynamic custom attributes, source metadata, and stable record identities
+- Qt model/view architecture with sortable dynamic columns and correct source/proxy mapping through filtering and sorting
+- advanced filtering across multiple severities, subsystems, event codes, entities, time ranges, dynamic custom fields, bookmark state, finding status, and full-record search
+- persistent named filter presets and filter-aware event, warning/error, summary, timeline, finding, and burst navigation
+- scalable timeline visualization with automatic and manual resolutions from millisecond through day scale
+- severity and subsystem timeline breakdowns with bounded fine-resolution rendering and horizontal navigation
+- deterministic event-code frequency, entity-frequency, severity-trend, and subsystem-trend analysis
+- configurable deterministic WARN/ERROR/CRITICAL burst detection with adaptive or manual timing, explicit thresholds, merged episodes, and transparent trigger explanations
+- burst contribution summaries across severities, subsystems, event codes, entities, and source records
+- lightweight per-session investigation state with bookmarks, multiline analyst notes, Open/Resolved/Dismissed findings, and direct findings navigation
+- a multi-session investigation workspace with independent filters, presentation state, import context, diagnostics, findings, and reload behavior
+- session switching, closing, and in-place reloading without replacing unrelated investigations
 - persistent recent-file and recent-profile history
-- CSV export with canonical and custom fields
-- automated Qt Test coverage across importing, profiles, workspace behavior, filtering, analysis, and export
+- background importing so long-running parses do not block the desktop UI
+- streamed import paths with determinate progress and cooperative cancellation where supported
+- safeguards for large structured-document preview work
+- measured large-file scenarios documented with conservative performance claims rather than unsupported maximum-size guarantees
+- CSV export of the currently visible investigation with canonical and source-specific custom fields
+- realistic fictional sample investigations covering production application incidents, engineering QA runs, and known-good/degraded field-support scenarios
+- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace state, findings, timeline analysis, analytics, cadence analysis, burst detection, and export
 - GitHub Actions builds and tests on Windows and Linux
 - automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
 - package-content verification and automated startup smoke tests
 - versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.9.0` prerelease adds a multi-session investigation workspace on top of the configurable import and large-file responsiveness foundations established in earlier releases. Multiple related log sources can remain open simultaneously with independent investigation state, while recent files and profiles provide a faster path back into recurring analysis workflows.
+The current `v0.12.0` prerelease adds deterministic analytics and explainable warning/error burst detection on top of the existing configurable import, large-file responsiveness, multi-session, advanced filtering, navigation, bookmarks, notes, and findings workflows. Analytics include event-code and entity frequencies, severity and subsystem timeline trends, adaptive investigation cadence analysis, and configurable burst detection without presenting the feature as AI anomaly detection or automated root-cause diagnosis.
 
-Development is now focused on **advanced filtering and navigation**, including richer filtering dimensions, saved filter presets, warning/error navigation, surrounding-event context, and drill-down from charts and summaries. Later roadmap phases add findings, deterministic analytics, session comparison, workspace persistence, live file following, and reporting.
+Development is now focused on **session comparison**, with the goal of comparing related investigations such as failed or degraded runs against known-good runs using shared dimensions including record counts, severity distributions, subsystems, event codes, duration, event rate, and burst behavior. Later roadmap phases add workspace persistence, live file following, reporting/export expansion, responsive display hardening, and the stable `v1.0.0` release.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
