@@ -60,43 +60,49 @@ It is one of the strongest examples in my portfolio of:
 
 **Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, Qt Concurrent, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, comparing, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
 
 It is a strong example in my portfolio of:
 
 - native C++ desktop application development with Qt
 - configurable multi-format log ingestion and normalization
 - JSON Lines, structured JSON, CSV/TSV, Syslog, IIS W3C, structured XML, key-value/logfmt, Windows Event XML, and configurable text-log support
-- reusable versioned JSON import profiles for canonical mappings, custom fields, severity aliases, timestamp rules, and record paths
+- reusable versioned JSON import profiles for canonical mappings, custom fields, severity aliases, timestamp rules, record paths, and unmapped-field preservation
 - mapping-aware preview, profile validation, format suggestions, and preserved raw-source inspection before import
 - a flexible investigation-record model with optional canonical fields, dynamic custom attributes, source metadata, and stable record identities
 - Qt model/view architecture with sortable dynamic columns and correct source/proxy mapping through filtering and sorting
-- advanced filtering across multiple severities, subsystems, event codes, entities, time ranges, dynamic custom fields, bookmark state, finding status, and full-record search
-- persistent named filter presets and filter-aware event, warning/error, summary, timeline, finding, and burst navigation
+- advanced filtering across multiple severities, subsystems, event codes, entities, UTC time ranges, dynamic custom fields, bookmark state, finding status, and full-record search
+- persistent named filter presets and filter-aware event, warning/error, grouped-summary, timeline, finding, and burst navigation
 - scalable timeline visualization with automatic and manual resolutions from millisecond through day scale
-- severity and subsystem timeline breakdowns with bounded fine-resolution rendering and horizontal navigation
+- severity and subsystem timeline breakdowns with bounded fine-resolution rendering, adaptive visible bucket counts, stable scaling, and horizontal navigation
 - deterministic event-code frequency, entity-frequency, severity-trend, and subsystem-trend analysis
 - configurable deterministic WARN/ERROR/CRITICAL burst detection with adaptive or manual timing, explicit thresholds, merged episodes, and transparent trigger explanations
 - burst contribution summaries across severities, subsystems, event codes, entities, and source records
 - lightweight per-session investigation state with bookmarks, multiline analyst notes, Open/Resolved/Dismissed findings, and direct findings navigation
-- a multi-session investigation workspace with independent filters, presentation state, import context, diagnostics, findings, and reload behavior
-- session switching, closing, and in-place reloading without replacing unrelated investigations
+- a multi-session investigation workspace with independent filters, presentation state, import context, diagnostics, bookmarks, notes, findings, and reload behavior
+- first-class workspace documents that can be reordered, detached into independent windows, moved between detached windows, grouped together, and re-docked without losing document state
+- narrow-width desktop layout support for split-screen and portrait-monitor workflows, including responsive filter reflow, adaptive timeline windows, compact selected-event controls, and improved review/detail splitter behavior
+- explicit Baseline → Comparison workflows for comparing two complete imported sessions
+- immutable session-comparison snapshots that remain stable even if source sessions are later filtered, reloaded, or closed
+- structured comparison of event-code appearance/disappearance/change, severity counts, elevated subsystem and entity activity, conservative shared custom-field differences, and session-level totals, duration, and event rate
+- optional burst comparison using one shared burst-detection configuration for both sessions so differences are evaluated on a consistent basis
+- comparison semantics that distinguish unavailable dimensions from valid zero-valued results and remain descriptive rather than claiming causal diagnosis or root cause
 - persistent recent-file and recent-profile history
 - background importing so long-running parses do not block the desktop UI
 - streamed import paths with determinate progress and cooperative cancellation where supported
 - safeguards for large structured-document preview work
-- measured large-file scenarios documented with conservative performance claims rather than unsupported maximum-size guarantees
+- measured large-file scenarios covering investigations up to 220,000 records and approximately 109 MiB on the documented test system, with conservative performance claims rather than unsupported maximum-size guarantees
 - CSV export of the currently visible investigation with canonical and source-specific custom fields
-- realistic fictional sample investigations covering production application incidents, engineering QA runs, and known-good/degraded field-support scenarios
-- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace state, findings, timeline analysis, analytics, cadence analysis, burst detection, and export
+- realistic fictional sample investigations covering production-style application incidents, engineering QA runs, and matched known-good/degraded field-support scenarios
+- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace state, findings, timeline analysis, analytics, cadence analysis, burst detection, session comparison, comparison setup behavior, and export
 - GitHub Actions builds and tests on Windows and Linux
 - automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
 - package-content verification and automated startup smoke tests
 - versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.12.0` prerelease adds deterministic analytics and explainable warning/error burst detection on top of the existing configurable import, large-file responsiveness, multi-session, advanced filtering, navigation, bookmarks, notes, and findings workflows. Analytics include event-code and entity frequencies, severity and subsystem timeline trends, adaptive investigation cadence analysis, and configurable burst detection without presenting the feature as AI anomaly detection or automated root-cause diagnosis.
+The current `v0.13.0` prerelease adds **session comparison and detachable multi-window workspace documents** on top of the existing configurable import, large-file responsiveness, filtering, timeline, analytics, burst detection, bookmarks, notes, findings, and multi-session workflows. Related sessions can be compared using an explicit Baseline → Comparison orientation, with immutable complete-session snapshots and structured differences across event codes, severity, subsystem and entity activity, selected shared custom fields, optional burst behavior, record totals, duration, and event rate. Workspace documents can also be detached, grouped into independent windows, moved between windows, and re-docked, with narrow-layout improvements supporting practical split-screen and portrait-monitor use.
 
-Development is now focused on **session comparison**, with the goal of comparing related investigations such as failed or degraded runs against known-good runs using shared dimensions including record counts, severity distributions, subsystems, event codes, duration, event rate, and burst behavior. Later roadmap phases add workspace persistence, live file following, reporting/export expansion, responsive display hardening, and the stable `v1.0.0` release.
+Development is now focused on **workspace persistence**, with the goal of restoring investigation state across application restarts rather than limiting session state to the current process. Planned persistence work includes source/profile context, bookmarks, notes, finding status, per-session filters, comparison documents, document ordering and active state, detached-window grouping and geometry, versioned local schemas, and recovery behavior when original source files are unavailable. Later roadmap work includes live file following, reporting/export expansion, final UI/documentation polish, and the stable `v1.0.0` release.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
