@@ -60,7 +60,7 @@ It is one of the strongest examples in my portfolio of:
 
 **Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, Qt Concurrent, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, comparing, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, comparing, persisting, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
 
 It is a strong example in my portfolio of:
 
@@ -78,31 +78,34 @@ It is a strong example in my portfolio of:
 - deterministic event-code frequency, entity-frequency, severity-trend, and subsystem-trend analysis
 - configurable deterministic WARN/ERROR/CRITICAL burst detection with adaptive or manual timing, explicit thresholds, merged episodes, and transparent trigger explanations
 - burst contribution summaries across severities, subsystems, event codes, entities, and source records
-- lightweight per-session investigation state with bookmarks, multiline analyst notes, Open/Resolved/Dismissed findings, and direct findings navigation
+- lightweight investigation state with bookmarks, multiline analyst notes, Open/Resolved/Dismissed findings, and direct findings navigation
 - a multi-session investigation workspace with independent filters, presentation state, import context, diagnostics, bookmarks, notes, findings, and reload behavior
 - first-class workspace documents that can be reordered, detached into independent windows, moved between detached windows, grouped together, and re-docked without losing document state
 - narrow-width desktop layout support for split-screen and portrait-monitor workflows, including responsive filter reflow, adaptive timeline windows, compact selected-event controls, and improved review/detail splitter behavior
 - explicit Baseline → Comparison workflows for comparing two complete imported sessions
-- immutable session-comparison snapshots that remain stable even if source sessions are later filtered, reloaded, or closed
+- immutable session-comparison snapshots that remain stable even if source sessions are later filtered, reloaded, closed, or unavailable when a saved workspace is reopened
 - structured comparison of event-code appearance/disappearance/change, severity counts, elevated subsystem and entity activity, conservative shared custom-field differences, and session-level totals, duration, and event rate
 - optional burst comparison using one shared burst-detection configuration for both sessions so differences are evaluated on a consistent basis
 - comparison semantics that distinguish unavailable dimensions from valid zero-valued results and remain descriptive rather than claiming causal diagnosis or root cause
-- persistent recent-file and recent-profile history
+- versioned local JSON workspace persistence for reopening multi-session investigations across application restarts
+- restoration of source/import-profile context, bookmarks, notes, finding status, active filters, session presentation state, immutable comparison documents, document ordering, active-document state, and main/detached window layout
+- missing-source recovery that allows moved files to be relocated or unavailable sessions to be skipped without discarding unrelated recoverable workspace state
+- persistent recent-file, recent-profile, and recent-workspace history backed by local application settings
 - background importing so long-running parses do not block the desktop UI
 - streamed import paths with determinate progress and cooperative cancellation where supported
 - safeguards for large structured-document preview work
 - measured large-file scenarios covering investigations up to 220,000 records and approximately 109 MiB on the documented test system, with conservative performance claims rather than unsupported maximum-size guarantees
 - CSV export of the currently visible investigation with canonical and source-specific custom fields
 - realistic fictional sample investigations covering production-style application incidents, engineering QA runs, and matched known-good/degraded field-support scenarios
-- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace state, findings, timeline analysis, analytics, cadence analysis, burst detection, session comparison, comparison setup behavior, and export
+- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace/session state, persistence serialization and compatibility, findings, presentation state, timeline analysis, analytics, cadence analysis, burst detection, session comparison, comparison setup behavior, and export
 - GitHub Actions builds and tests on Windows and Linux
 - automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
 - package-content verification and automated startup smoke tests
 - versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.13.0` prerelease adds **session comparison and detachable multi-window workspace documents** on top of the existing configurable import, large-file responsiveness, filtering, timeline, analytics, burst detection, bookmarks, notes, findings, and multi-session workflows. Related sessions can be compared using an explicit Baseline → Comparison orientation, with immutable complete-session snapshots and structured differences across event codes, severity, subsystem and entity activity, selected shared custom fields, optional burst behavior, record totals, duration, and event rate. Workspace documents can also be detached, grouped into independent windows, moved between windows, and re-docked, with narrow-layout improvements supporting practical split-screen and portrait-monitor use.
+The current `v0.14.0` prerelease adds **versioned workspace persistence and restoration** on top of the existing configurable import, large-file responsiveness, advanced filtering and navigation, analytics, burst detection, findings, multi-session investigation, detachable workspace documents, and immutable session-comparison workflows. Investigations can now be saved locally and reopened across application restarts with their source/profile context, annotations, filters, presentation state, comparison snapshots, document ordering, active-document state, and detached-window organization restored. Missing source files can be relocated or skipped without requiring unrelated recoverable workspace state to be discarded, and recently saved or opened workspaces are available through persistent Recent Workspaces history.
 
-Development is now focused on **workspace persistence**, with the goal of restoring investigation state across application restarts rather than limiting session state to the current process. Planned persistence work includes source/profile context, bookmarks, notes, finding status, per-session filters, comparison documents, document ordering and active state, detached-window grouping and geometry, versioned local schemas, and recovery behavior when original source files are unavailable. Later roadmap work includes live file following, reporting/export expansion, final UI/documentation polish, and the stable `v1.0.0` release.
+Development is now focused on **Phase 14 — Reporting and Export**, targeted for `v0.15.0`. The next phase expands the existing visible-record CSV workflow with findings export, selected-record copy as JSON and formatted text, and offline HTML reports for investigations and comparison snapshots. Reporting is planned around immutable point-in-time capture so generated output remains stable and can later support mutable live-following sessions or live comparisons without changing already-exported reports. Later roadmap work includes live file following and live-comparison design, final UI/documentation polish, and the stable `v1.0.0` release.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
