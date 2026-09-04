@@ -60,7 +60,7 @@ It is one of the strongest examples in my portfolio of:
 
 **Tech:** C++17, Qt 6, Qt Widgets, Qt Charts, Qt Model/View, Qt Concurrent, CMake, Qt Test, GitHub Actions, AppImage
 
-TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, comparing, persisting, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
+TraceScope is a cross-platform native desktop application for importing, normalizing, filtering, inspecting, visualizing, analyzing, annotating, comparing, persisting, reporting on, and exporting file-based telemetry and diagnostic logs. It supports multiple source formats through a common investigation model, with reusable import profiles for source-specific mappings and an offline workflow designed for application, service, QA, field-support, and engineering diagnostic logs.
 
 It is a strong example in my portfolio of:
 
@@ -96,16 +96,29 @@ It is a strong example in my portfolio of:
 - safeguards for large structured-document preview work
 - measured large-file scenarios covering investigations up to 220,000 records and approximately 109 MiB on the documented test system, with conservative performance claims rather than unsupported maximum-size guarantees
 - CSV export of the currently visible investigation with canonical and source-specific custom fields
+- structured findings CSV export for all, filtered, or bookmarked findings
+- selected-record copy as structured JSON or formatted human-readable text
+- document-scoped export actions that adapt to investigation-session and comparison documents
+- self-contained offline HTML investigation reports that can include multiple sessions and immutable comparison documents without requiring TraceScope or a hosted backend to read the exported result
+- immutable report configuration and snapshot models separated from mutable workspace widgets so generated output reflects a stable point-in-time capture
+- report metadata including explicit generation timestamps, captured record counts, source/session context, and time-span coverage
+- deterministic report sections for timelines, grouped analysis, event-code and entity frequencies, timestamp cadence, burst detection, findings, investigator annotations, supporting evidence, and optional technical import/profile details
+- direct report navigation from investigator annotations to matching supporting-evidence records, including automatic evidence expansion and target highlighting
+- offline comparison reports covering timing and record-rate context, severity changes, event-code differences, elevated subsystem/entity activity, custom-field differences, and shared-settings burst comparison
+- capability-aware report rendering that omits inapplicable sections or identifies unavailable dimensions rather than silently treating missing data as zero
+- privacy-oriented report presentation that omits source paths from the primary report body while retaining useful investigation context
+- atomic HTML report writing so incomplete generation does not replace an existing valid report
 - realistic fictional sample investigations covering production-style application incidents, engineering QA runs, and matched known-good/degraded field-support scenarios
-- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace/session state, persistence serialization and compatibility, findings, presentation state, timeline analysis, analytics, cadence analysis, burst detection, session comparison, comparison setup behavior, and export
+- a representative generated Field Gateway investigation report demonstrating a complete multi-session comparison and evidence handoff workflow
+- automated Qt Test coverage across importing, profiles, filtering, model/view behavior, workspace/session state, persistence serialization and compatibility, findings, presentation state, timeline analysis, analytics, cadence analysis, burst detection, session comparison, report snapshot capture, HTML escaping and rendering, evidence navigation, and export
 - GitHub Actions builds and tests on Windows and Linux
 - automated Release-mode packaging for portable Windows x64 and Linux AppImage distributions
 - package-content verification and automated startup smoke tests
 - versioned prereleases with downloadable Windows, Linux, and samples artifacts produced from verified CI builds
 
-The current `v0.14.0` prerelease adds **versioned workspace persistence and restoration** on top of the existing configurable import, large-file responsiveness, advanced filtering and navigation, analytics, burst detection, findings, multi-session investigation, detachable workspace documents, and immutable session-comparison workflows. Investigations can now be saved locally and reopened across application restarts with their source/profile context, annotations, filters, presentation state, comparison snapshots, document ordering, active-document state, and detached-window organization restored. Missing source files can be relocated or skipped without requiring unrelated recoverable workspace state to be discarded, and recently saved or opened workspaces are available through persistent Recent Workspaces history.
+The current `v0.15.0` prerelease completes **Phase 14 — Reporting and Export** on top of the existing configurable import, large-file responsiveness, advanced filtering and navigation, analytics, burst detection, findings, multi-session investigation, detachable workspace documents, immutable session comparison, and versioned workspace-persistence workflows. Investigators can now export structured findings, copy selected records as JSON or formatted text, and generate self-contained offline HTML reports from one or more investigation sessions and comparison documents. Report generation captures immutable investigation state at export time and can preserve analysis, cadence, bursts, findings, notes, supporting evidence, comparison differences, generation context, and optional technical details in a deterministic artifact that remains understandable outside TraceScope.
 
-Development is now focused on **Phase 14 — Reporting and Export**, targeted for `v0.15.0`. The next phase expands the existing visible-record CSV workflow with findings export, selected-record copy as JSON and formatted text, and offline HTML reports for investigations and comparison snapshots. Reporting is planned around immutable point-in-time capture so generated output remains stable and can later support mutable live-following sessions or live comparisons without changing already-exported reports. Later roadmap work includes live file following and live-comparison design, final UI/documentation polish, and the stable `v1.0.0` release.
+Development is now focused on **Phase 15 — Live and Long-Running Investigation**, extending TraceScope toward files that continue to grow while they are being investigated. That work is being designed so live updates do not weaken the immutable semantics already established for saved comparison snapshots and exported reports. Later roadmap work includes final UI, documentation, packaging, and release polish leading to the stable `v1.0.0` release.
 
 **Repository:** [TraceScope — Qt Telemetry Log Inspector](https://github.com/w-cook/tracescope-qt-log-inspector)
 
